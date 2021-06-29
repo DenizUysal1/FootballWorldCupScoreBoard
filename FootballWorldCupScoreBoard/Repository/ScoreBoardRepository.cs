@@ -31,6 +31,5 @@ namespace FootballWorldCupScoreBoard.Repository
             game.HomeTeamScore = gameUpdated.HomeTeamScore;
             game.AwayTeamScore = gameUpdated.AwayTeamScore;
         }
-        
     }
 }

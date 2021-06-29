@@ -92,10 +92,7 @@ namespace FootballWorldCupScoreBoardTest
             //Arrange
             var scoreBoardService = new ScoreBoardService();
             var games = GetGamesSample();
-            foreach (var game in games)
-            {
-                scoreBoardService.AddGame(game);
-            }
+            scoreBoardService.AddGames(games);
 
             //Act
             var summary = scoreBoardService.GetSummaryFromScoreBoard();

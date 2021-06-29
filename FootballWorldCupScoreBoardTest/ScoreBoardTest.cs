@@ -163,6 +163,26 @@ namespace FootballWorldCupScoreBoardTest
             Assert.Equal(display, summary);
         }
 
+        [Fact]
+        public void Should_Add_One_Team_To_Repository()
+        {
+            //Arrange
+            IBaseRepository<Team> teamRepository = new BaseRepository<Team>();
+            var team = new Team()
+            {
+                Id = 1,
+                Name = "NiP"
+            };
+
+            //Act
+            teamRepository.Add(team);
+
+
+            //Assert
+            var numberOfTeams = teamRepository.GetAll().Count;
+            Assert.Equal(1, numberOfTeams);
+        }
+
         private List<Game> GetGamesSample()
         {
             var games = new List<Game>()

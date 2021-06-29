@@ -26,7 +26,7 @@ namespace FootballWorldCupScoreBoard.Service
             _scoreBoardRepository.Add(game);
         }
 
-        public void AddGame(List<Game> games)
+        public void AddGames(List<Game> games)
         {
             _scoreBoardRepository.Add(games);
         }

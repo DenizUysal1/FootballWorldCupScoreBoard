@@ -26,6 +26,17 @@ namespace FootballWorldCupScoreBoardTest
         }
 
         [Fact]
+        public void Should_Throw_Exception_Of_Game_Null()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+
+            //Act
+            //Assert
+            Assert.Throws<ArgumentException>(() => scoreBoardService.AddGame(null));
+        }
+
+        [Fact]
         public void Should_Add_Five_Games_To_Score_Board()
         {
             //Arrange

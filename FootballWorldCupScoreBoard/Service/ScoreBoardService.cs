@@ -51,8 +51,8 @@ namespace FootballWorldCupScoreBoard.Service
         public List<Game> GetSummaryFromScoreBoard()
         {
             return _gameRepository.GetAll().OrderByDescending(x => x.TotalScore)
-                                                 .ThenByDescending(x => x.AddedOn)
-                                                 .ToList();
+                                           .ThenByDescending(x => x.AddedOn)
+                                           .ToList();
         }
 
         public List<string> GetDisplaySummaryOfBoardGame()

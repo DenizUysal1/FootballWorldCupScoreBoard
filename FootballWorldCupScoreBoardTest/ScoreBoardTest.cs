@@ -87,6 +87,27 @@ namespace FootballWorldCupScoreBoardTest
         }
 
         [Fact]
+        public void Should_Calculate_Ten_For_Total_Score_For_A_Game()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var game = new Game()
+            {
+                Id = 1,
+                HomeTeamScore = 5,
+                AwayTeamScore = 5
+            };
+
+            //Act
+            scoreBoardService.AddGame(game);
+
+            //Assert
+            var gameRetrieved = scoreBoardService.GetGame(1);
+
+            Assert.Equal(10, gameRetrieved.TotalScore);
+        }
+
+        [Fact]
         public void Should_Order_Games_By_Total_Score_And_Most_Recent_Added()
         {
             //Arrange

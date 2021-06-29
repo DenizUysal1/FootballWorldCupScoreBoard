@@ -7,6 +7,7 @@ namespace FootballWorldCupScoreBoard.Domain
     public class Game
     {
         public long Id { get; set; }
+
         //When the game is added to the score board.
         public DateTime AddedOn { get; set; }
         public Team HomeTeam { get; set; }

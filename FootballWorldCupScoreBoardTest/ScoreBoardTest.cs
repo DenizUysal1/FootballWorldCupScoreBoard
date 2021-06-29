@@ -40,6 +40,26 @@ namespace FootballWorldCupScoreBoardTest
         }
 
         [Fact]
+        public void Should_Initialize_A_Game_With_Both_Scores_At_Zero()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var game = new Game()
+            {
+                Id = 1
+            };
+
+            //Act
+            scoreBoardService.AddGame(game);
+            var gameRetrieved = scoreBoardService.GetGame(1);
+
+            //Assert
+            Assert.Equal(0, gameRetrieved.AwayTeamScore);
+            Assert.Equal(0, gameRetrieved.HomeTeamScore);
+
+        }
+
+        [Fact]
         public void Should_Finish_One_Game_From_Score_Board()
         {
             //Arrange

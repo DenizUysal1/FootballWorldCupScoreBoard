@@ -31,6 +31,9 @@ namespace FootballWorldCupScoreBoard.Service
 
         public void AddGames(List<Game> games)
         {
+            if(games is null)
+                throw new ArgumentException("List of games are null");
+
             _gameRepository.Add(games);
         }
 

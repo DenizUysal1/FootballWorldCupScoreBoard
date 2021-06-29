@@ -4,8 +4,8 @@ using System.Text;
 
 namespace FootballWorldCupScoreBoard.Domain
 {
-    public class Team : BaseDomain
+    public class BaseDomain
     {
-        public string Name { get; set; }
+        public long Id { get; set; }
     }
 }

@@ -9,46 +9,48 @@ namespace FootballWorldCupScoreBoard.Service
 {
     public class ScoreBoardService
     {
-        private readonly ScoreBoardRepository _scoreBoardRepository;
+        private readonly IBaseRepository<Game> _gameRepository;
         
         public ScoreBoardService()
         {
-            _scoreBoardRepository = new ScoreBoardRepository();
+            _gameRepository = new BaseRepository<Game>();
         }
 
         public Game GetGame(long id)
         {
-            return _scoreBoardRepository.Get(id);
+            return _gameRepository.Get(id);
         }
 
         public void AddGame(Game game)
         {
-            _scoreBoardRepository.Add(game);
+            _gameRepository.Add(game);
         }
 
         public void AddGames(List<Game> games)
         {
-            _scoreBoardRepository.Add(games);
+            _gameRepository.Add(games);
         }
 
         public void UpdateGame(Game game)
         {
-            _scoreBoardRepository.Update(game);
+            var gameRetrieved = _gameRepository.Get(game.Id);
+            gameRetrieved.HomeTeamScore = game.HomeTeamScore;
+            gameRetrieved.AwayTeamScore = game.AwayTeamScore;
         }
 
         public void FinishGame(long id)
         {
-            _scoreBoardRepository.Games = _scoreBoardRepository.Games.Where(x => x.Id != id).ToList();
+            _gameRepository.Remove(id);
         }
 
         public int GetNumberOfMatches()
         {
-            return _scoreBoardRepository.Games.Count;
+            return _gameRepository.GetAll().Count;
         }
 
         public List<Game> GetSummaryFromScoreBoard()
         {
-            return _scoreBoardRepository.GetAll().OrderByDescending(x => x.TotalScore)
+            return _gameRepository.GetAll().OrderByDescending(x => x.TotalScore)
                                                  .ThenByDescending(x => x.AddedOn)
                                                  .ToList();
         }

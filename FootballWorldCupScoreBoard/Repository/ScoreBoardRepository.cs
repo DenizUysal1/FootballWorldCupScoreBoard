@@ -25,7 +25,7 @@ namespace FootballWorldCupScoreBoard.Repository
             return Games.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public void UpdateGame(Game gameUpdated)
+        public void Update(Game gameUpdated)
         {
             var game = Games.Where(x => x.Id == gameUpdated.Id).FirstOrDefault();
             game.HomeTeamScore = gameUpdated.HomeTeamScore;

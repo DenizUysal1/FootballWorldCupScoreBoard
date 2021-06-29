@@ -28,7 +28,7 @@ namespace FootballWorldCupScoreBoard.Service
 
         public void UpdateGame(Game game)
         {
-            _scoreBoardRepository.UpdateGame(game);
+            _scoreBoardRepository.Update(game);
         }
 
         public void FinishGame(long id)

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballWorldCupScoreBoard", "FootballWorldCupScoreBoard\FootballWorldCupScoreBoard.csproj", "{9E643F50-2E60-47C6-A1C8-8F67741923CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballWorldCupScoreBoardTest", "FootballWorldCupScoreBoardTest\FootballWorldCupScoreBoardTest.csproj", "{687813BD-C2B6-40FD-8998-305FC7E21550}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E643F50-2E60-47C6-A1C8-8F67741923CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E643F50-2E60-47C6-A1C8-8F67741923CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E643F50-2E60-47C6-A1C8-8F67741923CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E643F50-2E60-47C6-A1C8-8F67741923CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687813BD-C2B6-40FD-8998-305FC7E21550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687813BD-C2B6-40FD-8998-305FC7E21550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687813BD-C2B6-40FD-8998-305FC7E21550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687813BD-C2B6-40FD-8998-305FC7E21550}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99FC03B1-3A3B-4C41-ABB2-2734917D4FD3}
+	EndGlobalSection
+EndGlobal

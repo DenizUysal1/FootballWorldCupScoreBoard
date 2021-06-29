@@ -20,6 +20,11 @@ namespace FootballWorldCupScoreBoard.Repository
             Games.Add(game);
         }
 
+        public void Add(List<Game> games)
+        {
+            Games.AddRange(games);
+        }
+
         public Game Get(long id)
         {
             return Games.Where(x => x.Id == id).FirstOrDefault();

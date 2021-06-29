@@ -32,10 +32,10 @@ namespace FootballWorldCupScoreBoardTest
             var games = GetGamesSample();
 
             //Act
-            scoreBoardService.AddGame(game);
+            scoreBoardService.AddGame(games);
 
             //Assert
-            Assert.Equal(1, scoreBoardService.GetNumberOfMatches());
+            Assert.Equal(5, scoreBoardService.GetNumberOfMatches());
 
         }
 

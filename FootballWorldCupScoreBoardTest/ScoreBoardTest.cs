@@ -113,9 +113,10 @@ namespace FootballWorldCupScoreBoardTest
             //Arrange
             var scoreBoardService = new ScoreBoardService();
             var games = GetGamesSample();
-            scoreBoardService.AddGames(games);
+
 
             //Act
+            scoreBoardService.AddGames(games);
             var summary = scoreBoardService.GetSummaryFromScoreBoard();
 
             //Assert
@@ -133,9 +134,9 @@ namespace FootballWorldCupScoreBoardTest
             var scoreBoardService = new ScoreBoardService();
             var games = GetGamesSample();
             var display = GetDisplayOfSummarySample();
-            scoreBoardService.AddGames(games);
 
             //Act
+            scoreBoardService.AddGames(games);
             var summary = scoreBoardService.GetDisplaySummaryOfBoardGame();
 
             //Assert
@@ -229,11 +230,11 @@ namespace FootballWorldCupScoreBoardTest
         {
             return new List<string>()
             {
-                "Mexico - Canada: 0 - 5",
-                "Spain - Brazil: 10 - 2",
-                "Germany - France: 2 - 2",
-                "Uruguay - Italy: 6 - 6",
-                "Argentina - Australia: 3 - 1",
+                "Uruguay 6 - Italy 6",
+                "Spain 10 - Brazil 2",
+                "Mexico 0 - Canada 5",
+                "Argentina 3 - Australia 1",
+                "Germany 2 - France 2",
             };
         }
     }

@@ -53,5 +53,16 @@ namespace FootballWorldCupScoreBoard.Service
                                                  .ToList();
         }
 
+        public List<string> GetDisplaySummaryOfBoardGame()
+        {
+            var summaryOfGames = new List<string>();
+            foreach (var game in GetSummaryFromScoreBoard())
+            {
+                summaryOfGames.Add($"{game.HomeTeam.Name} {game.HomeTeamScore} - {game.AwayTeam.Name} {game.AwayTeamScore}");
+            }
+
+            return summaryOfGames;
+        }
+
     }
 }

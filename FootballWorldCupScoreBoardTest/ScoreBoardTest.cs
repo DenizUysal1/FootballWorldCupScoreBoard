@@ -21,5 +21,24 @@ namespace FootballWorldCupScoreBoardTest
             Assert.Equal(1, scoreBoardService.GetNumberOfMatches());
 
         }
+
+        [Fact]
+        public void Should_Finish_One_Game_From_Score_Board()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var game = new Game()
+            {
+                Id = 1
+            };
+
+            //Act
+            scoreBoardService.AddGame(game);
+            scoreBoardService.FinishGame(game.Id);
+
+            //Assert
+            Assert.Equal(0, scoreBoardService.GetNumberOfMatches());
+
+        }
     }
 }

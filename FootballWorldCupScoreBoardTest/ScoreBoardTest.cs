@@ -126,6 +126,22 @@ namespace FootballWorldCupScoreBoardTest
             Assert.Equal(3,summary[4].Id);
         }
 
+        [Fact]
+        public void Should_Return_List_Of_Summary_Ordered_By_Total_Score_And_Most_Recent_Added()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var games = GetGamesSample();
+            var display = GetDisplayOfSummarySample();
+            scoreBoardService.AddGames(games);
+
+            //Act
+            var summary = scoreBoardService.GetDisplaySummaryOfBoardGame();
+
+            //Assert
+            Assert.Equal(display, summary);
+        }
+
         private List<Game> GetGamesSample()
         {
             var games = new List<Game>()
@@ -208,6 +224,17 @@ namespace FootballWorldCupScoreBoardTest
             };
 
             return games;
+        }
+        private List<string> GetDisplayOfSummarySample()
+        {
+            return new List<string>()
+            {
+                "Mexico - Canada: 0 - 5",
+                "Spain - Brazil: 10 - 2",
+                "Germany - France: 2 - 2",
+                "Uruguay - Italy: 6 - 6",
+                "Argentina - Australia: 3 - 1",
+            };
         }
     }
 }

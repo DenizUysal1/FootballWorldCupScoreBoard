@@ -40,5 +40,33 @@ namespace FootballWorldCupScoreBoardTest
             Assert.Equal(0, scoreBoardService.GetNumberOfMatches());
 
         }
+
+        public void Should_Update_One_Match_From_Score_Board()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var game = new Game()
+            {
+                Id = 1
+            };
+
+            var gameUpdated = new Game()
+            {
+                Id = 1,
+                HomeTeamScore = 5,
+                AwayTeamScore = 3
+            };
+
+            //Act
+            scoreBoardService.AddGame(game);
+            scoreBoardService.UpdateGame(gameUpdated);
+
+            //Assert
+            var gameRetrieved = scoreBoardService.GetGameFromScoreBoard(id);
+
+            Assert.Equal(5,gameRetrieved.HomeTeamScore);
+            Assert.Equal(3,gameRetrieved.AwayTeamScore);
+
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace FootballWorldCupScoreBoard.Domain
         public Team HomeTeam { get; set; }
         public Team AwayTeam { get; set; }
 
-        public int HomeTeamScore { get; set; }
-        public int AwayTeamScore { get; set; }
+        public int HomeTeamScore { get; set; } = 0;
+        public int AwayTeamScore { get; set; } = 0;
     }
 }

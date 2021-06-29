@@ -41,5 +41,12 @@ namespace FootballWorldCupScoreBoard.Service
             return _scoreBoardRepository.Games.Count;
         }
 
+        public List<Game> GetSummaryFromScoreBoard()
+        {
+            return _scoreBoardRepository.GetAll().OrderByDescending(x => x.TotalScore)
+                                                 .ThenByDescending(x => x.AddedOn)
+                                                 .ToList();
+        }
+
     }
 }

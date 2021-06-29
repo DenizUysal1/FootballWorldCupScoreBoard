@@ -2,6 +2,7 @@ using FootballWorldCupScoreBoard.Domain;
 using FootballWorldCupScoreBoard.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace FootballWorldCupScoreBoardTest
@@ -75,7 +76,7 @@ namespace FootballWorldCupScoreBoardTest
         {
             //Arrange
             var scoreBoardService = new ScoreBoardService();
-            var games = GetGamesToSummary();
+            var games = GetGamesToSummarySample();
             foreach (var game in games)
             {
                 scoreBoardService.AddGame(game);
@@ -85,12 +86,14 @@ namespace FootballWorldCupScoreBoardTest
             var summary = scoreBoardService.GetSummaryFromScoreBoard();
 
             //Assert
-            var gamesSorted = GetGamesToSummarySorted();
-
-            Assert.Equal(gamesSorted, summary);
+            Assert.Equal(4,summary[0].Id);
+            Assert.Equal(2,summary[1].Id);
+            Assert.Equal(1,summary[2].Id);
+            Assert.Equal(5,summary[3].Id);
+            Assert.Equal(3,summary[4].Id);
         }
 
-        private List<Game> GetGamesToSummary()
+        private List<Game> GetGamesToSummarySample()
         {
             var games = new List<Game>()
             {
@@ -100,98 +103,14 @@ namespace FootballWorldCupScoreBoardTest
                     AddedOn = DateTime.Today.AddDays(-5),
                     AwayTeam = new Team()
                     {
-                        Name = "Mexico"
-                    },
-                    HomeTeam = new Team()
-                    {
                         Name = "Canada"
                     },
-                    AwayTeamScore = 0,
-                    HomeTeamScore = 5
-                },
-                new Game()
-                {
-                    Id = 2,
-                    AddedOn = DateTime.Today.AddDays(-4),
-                    AwayTeam = new Team()
-                    {
-                        Name = "Spain"
-                    },
                     HomeTeam = new Team()
                     {
-                        Name = "Brazil"
+                        Name = "Mexico"
                     },
-                    AwayTeamScore = 10,
-                    HomeTeamScore = 2
-                },
-                new Game()
-                {
-                    Id = 3,
-                    AddedOn = DateTime.Today.AddDays(-3),
-                    AwayTeam = new Team()
-                    {
-                        Name = "Germany"
-                    },
-                    HomeTeam = new Team()
-                    {
-                        Name = "France"
-                    },
-                    AwayTeamScore = 2,
-                    HomeTeamScore = 2
-                },
-                new Game()
-                {
-                    Id = 4,
-                    AddedOn = DateTime.Today.AddDays(-2),
-                    AwayTeam = new Team()
-                    {
-                        Name = "Uruguay"
-                    },
-                    HomeTeam = new Team()
-                    {
-                        Name = "Italy"
-                    },
-                    AwayTeamScore = 6,
-                    HomeTeamScore = 6
-                },
-                new Game()
-                {
-                    Id = 5,
-                    AddedOn = DateTime.Today.AddDays(-1),
-                    AwayTeam = new Team()
-                    {
-                        Name = "Argentina"
-                    },
-                    HomeTeam = new Team()
-                    {
-                        Name = "Australia"
-                    },
-                    AwayTeamScore = 3,
-                    HomeTeamScore = 1
-                }
-            };
-
-            return games;
-        }
-
-        private List<Game> GetGamesToSummarySorted()
-        {
-            var games = new List<Game>()
-            {
-                new Game()
-                {
-                    Id = 4,
-                    AddedOn = DateTime.Today.AddDays(-2),
-                    AwayTeam = new Team()
-                    {
-                        Name = "Italy"
-                    },
-                    HomeTeam = new Team()
-                    {
-                        Name = "Uruguay"
-                    },
-                    AwayTeamScore = 6,
-                    HomeTeamScore = 6
+                    AwayTeamScore = 5,
+                    HomeTeamScore = 0
                 },
                 new Game()
                 {
@@ -225,18 +144,18 @@ namespace FootballWorldCupScoreBoardTest
                 },
                 new Game()
                 {
-                    Id = 1,
-                    AddedOn = DateTime.Today.AddDays(-5),
+                    Id = 4,
+                    AddedOn = DateTime.Today.AddDays(-2),
                     AwayTeam = new Team()
                     {
-                        Name = "Canada"
+                        Name = "Italy"
                     },
                     HomeTeam = new Team()
                     {
-                        Name = "Mexico"
+                        Name = "Uruguay"
                     },
-                    AwayTeamScore = 5,
-                    HomeTeamScore = 0
+                    AwayTeamScore = 6,
+                    HomeTeamScore = 6
                 },
                 new Game()
                 {

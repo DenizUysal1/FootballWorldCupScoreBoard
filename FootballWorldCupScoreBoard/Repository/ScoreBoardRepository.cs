@@ -25,6 +25,11 @@ namespace FootballWorldCupScoreBoard.Repository
             return Games.Where(x => x.Id == id).FirstOrDefault();
         }
 
+        public List<Game> GetAll()
+        {
+            return Games;
+        }
+
         public void Update(Game gameUpdated)
         {
             var game = Games.Where(x => x.Id == gameUpdated.Id).FirstOrDefault();

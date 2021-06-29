@@ -41,6 +41,7 @@ namespace FootballWorldCupScoreBoardTest
 
         }
 
+        [Fact]
         public void Should_Update_One_Match_From_Score_Board()
         {
             //Arrange
@@ -62,7 +63,7 @@ namespace FootballWorldCupScoreBoardTest
             scoreBoardService.UpdateGame(gameUpdated);
 
             //Assert
-            var gameRetrieved = scoreBoardService.GetGameFromScoreBoard(id);
+            var gameRetrieved = scoreBoardService.GetGame(1);
 
             Assert.Equal(5,gameRetrieved.HomeTeamScore);
             Assert.Equal(3,gameRetrieved.AwayTeamScore);

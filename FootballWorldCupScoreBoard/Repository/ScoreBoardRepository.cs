@@ -1,6 +1,7 @@
 ﻿using FootballWorldCupScoreBoard.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FootballWorldCupScoreBoard.Repository
@@ -17,6 +18,18 @@ namespace FootballWorldCupScoreBoard.Repository
         public void Add(Game game)
         {
             Games.Add(game);
+        }
+
+        public Game Get(long id)
+        {
+            return Games.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public void UpdateGame(Game gameUpdated)
+        {
+            var game = Games.Where(x => x.Id == gameUpdated.Id).FirstOrDefault();
+            game.HomeTeamScore = gameUpdated.HomeTeamScore;
+            game.AwayTeamScore = gameUpdated.AwayTeamScore;
         }
         
     }

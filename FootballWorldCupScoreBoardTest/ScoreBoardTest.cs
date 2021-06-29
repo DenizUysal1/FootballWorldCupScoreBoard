@@ -25,6 +25,21 @@ namespace FootballWorldCupScoreBoardTest
         }
 
         [Fact]
+        public void Should_Add_Five_Games_To_Score_Board()
+        {
+            //Arrange
+            var scoreBoardService = new ScoreBoardService();
+            var games = GetGamesSample();
+
+            //Act
+            scoreBoardService.AddGame(game);
+
+            //Assert
+            Assert.Equal(1, scoreBoardService.GetNumberOfMatches());
+
+        }
+
+        [Fact]
         public void Should_Finish_One_Game_From_Score_Board()
         {
             //Arrange
@@ -76,7 +91,7 @@ namespace FootballWorldCupScoreBoardTest
         {
             //Arrange
             var scoreBoardService = new ScoreBoardService();
-            var games = GetGamesToSummarySample();
+            var games = GetGamesSample();
             foreach (var game in games)
             {
                 scoreBoardService.AddGame(game);
@@ -93,7 +108,7 @@ namespace FootballWorldCupScoreBoardTest
             Assert.Equal(3,summary[4].Id);
         }
 
-        private List<Game> GetGamesToSummarySample()
+        private List<Game> GetGamesSample()
         {
             var games = new List<Game>()
             {
